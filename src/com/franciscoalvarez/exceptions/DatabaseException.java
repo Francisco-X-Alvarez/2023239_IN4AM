@@ -8,6 +8,19 @@ package com.franciscoalvarez.exceptions;
  *
  * @author Francisco Franco
  */
-public class DatabaseException {
-    
+public class DatabaseException extends Exception {
+
+    // guarda el mensaje personalizado
+    private String mensaje;
+
+    // constructor que recibe el texto del error
+    public DatabaseException(String mensaje) {
+        this.mensaje = mensaje;
+    }
+
+    // metodo para obtener el mensaje cuando necesitemos mostrarlo
+    @Override
+    public String getMessage() {
+        return mensaje;
+    }
 }
